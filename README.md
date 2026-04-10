@@ -13,19 +13,18 @@ A Node.js tool for running Google Lighthouse performance audits on websites with
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download) installed
-- Google Lighthouse CLI installed (`npm install -g lighthouse`)
-- curl and perl (usually pre-installed on macOS/Linux)
+- [curl](https://curl.se/download.html) and [perl](https://www.perl.org/get.html) (usually pre-installed on macOS/Linux, installation likely required on Windows)
 
 ## Installation
 
 1. Clone or download this repository
 2. Install dependencies: `npm install`
 3. Ensure you have `lighthouse.config.js` in the same directory
-4. Make the script executable: `chmod +x runner.js`
+4. Make the runner executable: `chmod +x runner.js`
 
 ## Usage
 
-### Basic Commands
+### Commands
 
 ```bash
 # Test a single URL for both mobile and desktop
@@ -41,6 +40,8 @@ npm run test:desktop -- https://example.com
 npm run test:both -- https://example.com https://example.com/collections/collection-handle https://example.com/products/product-handle
 ```
 
+**Note**: If you don't specify a URL it will fall back to `http://localhost:9292`.
+
 ### Multiple URL Examples
 
 ```bash
@@ -55,31 +56,6 @@ node runner.js mobile \
   https://client1.com \
   https://client2.com \
   https://client3.com
-```
-
-### NPM Scripts
-
-For convenience, several NPM scripts are provided to simplify common testing scenarios:
-
-```bash
-# Run help to see all available options
-npm run help
-
-# Test mobile only
-npm run test:mobile -- https://www.example.com
-
-# Test desktop only
-npm run test:desktop -- https://www.example.com
-
-# Test both mobile and desktop
-npm run test:both -- https://www.example.com
-```
-
-**Note**: The test scripts that don't specify URLs will fall back to `http://localhost:9292`. To test specific URLs with npm scripts, use the `--` syntax as shown above.
-
-```bash
-# For direct node command when npm scripts don't fit your workflow
-node runner.js both https://your-site.com
 ```
 
 ## Output Structure
@@ -166,13 +142,13 @@ The configuration includes Shopify-optimized performance budgets:
 ### Single Client Deep Audit
 
 ```bash
-# Comprehensive audit of Fix8 site
+# Comprehensive audit of client site
 npm run test:both -- \
-  https://fix8.com \
-  https://fix8.com/collections/kombucha \
-  https://fix8.com/collections/kombucha/products/fix8-mixed-case-12x250ml \
-  https://fix8.com/pages/about \
-  https://fix8.com/pages/contact
+  https://site.com \
+  https://site.com/collections/collection-handle \
+  https://site.com/products/product-handle \
+  https://site.com/pages/about \
+  https://site.com/pages/contact
 ```
 
 ### Multi-Client Mobile Performance Check
@@ -190,66 +166,14 @@ npm run test:mobile -- \
 ```bash
 # Desktop-specific testing for sites with complex layouts
 npm run test:desktop -- \
-  https://dashboard.example.com \
-  https://admin.example.com \
-  https://reports.example.com
+  https://site1.com/products/product-handle \
+  https://site2.com/products/product-handle \
+  https://site3.com/products/product-handle
 ```
 
 ## Claude Desktop Integration
 
 This lighthouse testing tool integrates seamlessly with Claude Desktop for AI-powered performance analysis and workflow automation.
-
-### Terminal Command Integration
-
-Claude Desktop can execute lighthouse tests directly and analyze results:
-
-```bash
-# Ask Claude Desktop to run performance tests
-npm run test:both -- https://your-client-site.com
-
-# Claude can run bulk tests for multiple clients
-npm run test:mobile -- \
-  https://client1.com \
-  https://client2.com \
-  https://client3.com
-
-# Generate comprehensive audits
-npm run test:both -- \
-  https://example.com \
-  https://example.com/collections/products \
-  https://example.com/products/bestseller
-```
-
-### AI-Powered Analysis Workflows
-
-With Claude Desktop, you can:
-
-1. **Automated Test Planning**: Provide a client website, and Claude can suggest optimal URL sets for testing (homepage, key product pages, blog articles, etc.)
-
-2. **Performance Report Analysis**: Claude can read and analyze the generated JSON reports to provide insights on:
-   - Core Web Vitals performance
-   - Accessibility issues
-   - SEO optimization opportunities
-   - Performance budget compliance
-
-3. **Multi-Client Comparisons**: Claude can analyze reports across multiple clients to identify:
-   - Industry performance benchmarks
-   - Common performance issues
-   - Best-performing implementations
-
-4. **Actionable Recommendations**: Get specific, prioritized recommendations for performance improvements based on Lighthouse data
-
-### Example Claude Desktop Prompts
-
-```
-"Run lighthouse tests on https://example.com and analyze the performance results"
-
-"Compare the mobile performance of these 3 e-commerce sites and provide improvement recommendations"
-
-"Generate a comprehensive performance audit plan for a Shopify client with 50+ products"
-
-"Analyze the lighthouse reports in reports/fix8.com/ and create a client-ready performance summary"
-```
 
 ### Report Analysis
 
