@@ -1,0 +1,62 @@
+{
+  "name": "lighthouse-test-runner",
+  "version": "1.0.0",
+  "description": "Advanced Lighthouse test runner with intelligent file naming, page type detection, client organization, and multi-URL batch processing capabilities",
+  "main": "runner.js",
+  "bin": {
+    "runner": "./runner.js"
+  },
+  "scripts": {
+    "test:mobile": "node runner.js mobile",
+    "test:desktop": "node runner.js desktop",
+    "test:both": "node runner.js both",
+    "help": "node runner.js --help"
+  },
+  "keywords": [
+    "lighthouse",
+    "performance",
+    "testing",
+    "web-performance",
+    "seo",
+    "accessibility",
+    "shopify",
+    "e-commerce",
+    "page-type-detection",
+    "multi-url",
+    "batch-testing",
+    "client-reports",
+    "mobile-testing",
+    "desktop-testing"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "lighthouse": "^13.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonXmack/lighthouse-test-runner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonXmack/lighthouse-test-runner/issues"
+  },
+  "homepage": "https://github.com/jonXmack/lighthouse-test-runner#readme",
+  "author": "Jon MacKinnon <jonmackinnon@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "runner.js",
+    "lighthouse.config.js",
+    "README.md"
+  ],
+  "preferGlobal": true,
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
+}
