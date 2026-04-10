@@ -198,3 +198,5 @@ The tool provides detailed console output including:
 - Comprehensive summaries at completion
 
 Each run generates both HTML (visual report) and JSON (raw data) formats for maximum flexibility in reporting and analysis.
+
+Google offers a useful [Diff tool](https://googlechrome.github.io/lighthouse-ci/difftool/) to compare two reports. You can also use the [viewer](https://googlechrome.github.io/lighthouse/viewer/) with any json file to view the content as an html file.
