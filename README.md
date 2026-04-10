@@ -47,9 +47,9 @@ npm run test:both -- https://example.com https://example.com/collections/collect
 ```bash
 # Test multiple pages for a client
 npm run test:both -- \
-  https://fix8.com \
-  https://fix8.com/collections/kombucha \
-  https://fix8.com/collections/kombucha/products/fix8-mixed-case-12x250ml
+  https://example.com \
+  https://example.com/collections/collection-handle \
+  https://example.com/products/product-handle
 
 # Test multiple client sites (mobile only)
 node runner.js mobile \
@@ -64,15 +64,15 @@ Reports are automatically organized by hostname under the `reports/` directory:
 
 ```
 reports/
-├── fix8.com/
-│   ├── mobile-HOME-Fix8-Kombucha-2026-04-10T10-45-20.html
-│   ├── mobile-HOME-Fix8-Kombucha-2026-04-10T10-45-20.json
-│   ├── desktop-HOME-Fix8-Kombucha-2026-04-10T10-45-20.html
-│   ├── desktop-HOME-Fix8-Kombucha-2026-04-10T10-45-20.json
-│   ├── mobile-PLP-Kombucha-Collection-2026-04-10T10-46-15.html
-│   ├── mobile-PLP-Kombucha-Collection-2026-04-10T10-46-15.json
-│   ├── mobile-PDP-Fix8-Mixed-Case-12x250ml-2026-04-10T10-47-00.html
-│   └── mobile-PDP-Fix8-Mixed-Case-12x250ml-2026-04-10T10-47-00.json
+├── client1.com/
+│   ├── mobile-HOME-Page-Title-2026-04-10T10-45-20.html
+│   ├── mobile-HOME-Page-Title-2026-04-10T10-45-20.json
+│   ├── desktop-HOME-Page-Title-2026-04-10T10-45-20.html
+│   ├── desktop-HOME-Page-Title-2026-04-10T10-45-20.json
+│   ├── mobile-PLP-Collection-Title-2026-04-10T10-46-15.html
+│   ├── mobile-PLP-Collection-Title-2026-04-10T10-46-15.json
+│   ├── mobile-PDP-Product-Title-2026-04-10T10-47-00.html
+│   └── mobile-PDP-Product-Title-2026-04-10T10-47-00.json
 ├── client2.com/
 │   ├── mobile-PAGE-About-Us-2026-04-10T11-00-00.html
 │   └── mobile-PAGE-About-Us-2026-04-10T11-00-00.json
